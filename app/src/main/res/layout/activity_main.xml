@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/passwordTextView"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click Generate"
-        android:layout_gravity="top|center"
-        />
+        android:orientation="vertical"
+        android:layout_gravity="center|top">
+
+        <TextView
+            android:id="@+id/passwordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:text="Click Generate" />
+        <Button
+            android:id="@+id/copyToClipboardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copy"
+            />
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,9 +35,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:orientation="horizontal"
-
             >
 
             <TextView
@@ -35,14 +46,14 @@
                 android:layout_gravity="left"
                 android:text="Length:" />
 
-            <EditText
-                android:id="@+id/passwordLengthEditText"
+            <SeekBar
+                android:id="@+id/passwordLengthSeekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                android:layout_gravity="right"
-                />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="10"
+                android:progress="3" />
 
         </LinearLayout>
 
